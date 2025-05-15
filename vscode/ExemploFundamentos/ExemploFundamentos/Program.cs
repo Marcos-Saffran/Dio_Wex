@@ -1,41 +1,46 @@
-﻿using ExemploFundamentos.Models;
+﻿using ExemploFundamentos.Common.Models;
+
+Pessoa pessoa1 = new Pessoa();
+pessoa1.Nome = "João";
+pessoa1.Idade = 30;
+pessoa1.Apresentar();
 
 
-string opcao;
-bool continuar = true;
+// string opcao;
+// bool continuar = true;
 
-while(continuar){
-    // Console.Clear();
-    Console.WriteLine("Digite uma opção: ");
-    Console.WriteLine("1 - Cadastrar Cliente");
-    Console.WriteLine("2 - Buscar Cliente");
-    Console.WriteLine("3 - Apagar cliente");
-    Console.WriteLine("4 - Encerrar");
-    opcao = Console.ReadLine() ?? string.Empty;
+// while(continuar){
+//     // Console.Clear();
+//     Console.WriteLine("Digite uma opção: ");
+//     Console.WriteLine("1 - Cadastrar Cliente");
+//     Console.WriteLine("2 - Buscar Cliente");
+//     Console.WriteLine("3 - Apagar cliente");
+//     Console.WriteLine("4 - Encerrar");
+//     opcao = Console.ReadLine() ?? string.Empty;
 
-    switch(opcao){
-        case "1":
-            Console.WriteLine("Cadastrar Cliente");
-            break;
-        case "2":
-            Console.WriteLine("Buscar Cliente");
-            break;
-        case "3":
-            Console.WriteLine("Apagar Cliente");
-            break;
-        case "4":
-            Console.WriteLine("Encerrar");
-            continuar = false;
-            // Environment.Exit(0);
-            // return;
-            break;
-        default:
-            Console.WriteLine("Opção inválida");
-            break;
-    }
+//     switch(opcao){
+//         case "1":
+//             Console.WriteLine("Cadastrar Cliente");
+//             break;
+//         case "2":
+//             Console.WriteLine("Buscar Cliente");
+//             break;
+//         case "3":
+//             Console.WriteLine("Apagar Cliente");
+//             break;
+//         case "4":
+//             Console.WriteLine("Encerrar");
+//             continuar = false;
+//             // Environment.Exit(0);
+//             // return;
+//             break;
+//         default:
+//             Console.WriteLine("Opção inválida");
+//             break;
+//     }
 
-}
-Console.WriteLine("Sistema encerrado com sucesso!");
+// }
+// Console.WriteLine("Sistema encerrado com sucesso!");
 
 // Calculadora calculadora = new Calculadora();
 
