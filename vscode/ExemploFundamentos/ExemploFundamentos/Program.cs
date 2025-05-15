@@ -1,9 +1,70 @@
 ﻿using ExemploFundamentos.Common.Models;
 
-Pessoa pessoa1 = new Pessoa();
-pessoa1.Nome = "João";
-pessoa1.Idade = 30;
-pessoa1.Apresentar();
+List<string> listaString = new List<string>();
+
+listaString.Add("SP");
+listaString.Add("BA");
+listaString.Add("MG");
+listaString.Add("RJ");
+
+Console.WriteLine($"Itens na lista: {listaString.Count} - Capacidade: {listaString.Capacity}");
+
+listaString.Add("PR");
+
+Console.WriteLine($"Itens na lista: {listaString.Count} - Capacidade: {listaString.Capacity}");
+
+listaString.Remove("SP");
+Console.WriteLine($"Itens na lista: {listaString.Count} - Capacidade: {listaString.Capacity}");
+
+
+// for (int contador = 0; contador < listaString.Count; contador++)
+// {
+//     Console.WriteLine($"Índice {contador}: {listaString[contador]}");
+// }
+
+// int contador2 = 0;
+// foreach (string item in listaString)
+// {
+//     Console.WriteLine($"Índice {contador2}: {item}");
+//     contador2++;
+// }
+
+
+// int[] arrayInteiros = new int[4];
+
+// arrayInteiros[0] = 72;
+// arrayInteiros[1] = 64;
+// arrayInteiros[2] = 50;
+// arrayInteiros[3] = 1; // ArrayIndexOutOfRangeException
+
+// int[] arrayInteirosDobrado = new int[arrayInteiros.Length * 2];
+// Array.Copy(arrayInteiros, arrayInteirosDobrado, arrayInteiros.Length);
+
+
+
+// // Array.Resize(ref arrayInteiros, arrayInteiros.Length * 2);
+
+// Console.WriteLine($"---------------------------------------------------");
+
+// for (int i = 0; i < arrayInteiros.Length; i++)
+// {
+//     Console.WriteLine($"Valor do índice {i}: {arrayInteiros[i]}");
+// }
+// Console.WriteLine($"---------------------------------------------------");
+// int contador = 0;
+// foreach (int item in arrayInteiros)
+// {
+//     Console.WriteLine($"Valor do índice {contador}: {item}");
+//     contador++;
+// }
+// Console.WriteLine($"---------------------------------------------------");
+
+
+
+// Pessoa pessoa1 = new Pessoa();
+// pessoa1.Nome = "João";
+// pessoa1.Idade = 30;
+// pessoa1.Apresentar();
 
 
 // string opcao;
