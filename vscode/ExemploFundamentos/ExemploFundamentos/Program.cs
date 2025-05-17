@@ -1,20 +1,45 @@
 ﻿using ExemploFundamentos.Common.Models;
 
-List<string> listaString = new List<string>();
 
-listaString.Add("SP");
-listaString.Add("BA");
-listaString.Add("MG");
-listaString.Add("RJ");
+// // Instância da classe pessoa
+// Pessoa pessoa = new Pessoa();
 
-Console.WriteLine($"Itens na lista: {listaString.Count} - Capacidade: {listaString.Capacity}");
+// // Atribui o nome e idade para pessoa
+// pessoa.Nome = "João";
+// pessoa.Idade = 30;
 
-listaString.Add("PR");
+// // Faz a pessoa se apresentar
+// pessoa.Apresentar();
 
-Console.WriteLine($"Itens na lista: {listaString.Count} - Capacidade: {listaString.Capacity}");
+// Calculadora calculadora = new Calculadora();
+// Calculadora.Somar(10, 30);
 
-listaString.Remove("SP");
-Console.WriteLine($"Itens na lista: {listaString.Count} - Capacidade: {listaString.Capacity}");
+
+// comentário de uma única linha
+
+/*
+comentário de múltiplas linhas
+*/
+
+// <summary>
+
+
+
+// List<string> listaString = new List<string>();
+
+// listaString.Add("SP");
+// listaString.Add("BA");
+// listaString.Add("MG");
+// listaString.Add("RJ");
+
+// Console.WriteLine($"Itens na lista: {listaString.Count} - Capacidade: {listaString.Capacity}");
+
+// listaString.Add("PR");
+
+// Console.WriteLine($"Itens na lista: {listaString.Count} - Capacidade: {listaString.Capacity}");
+
+// listaString.Remove("SP");
+// Console.WriteLine($"Itens na lista: {listaString.Count} - Capacidade: {listaString.Capacity}");
 
 
 // for (int contador = 0; contador < listaString.Count; contador++)
