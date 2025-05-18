@@ -23,9 +23,19 @@ namespace ExemploExplorando.Models
         public void ListarAlunos()
         {
             Console.WriteLine($"Alunos do curso {Nome}:");
-            foreach (var aluno in Alunos)
+            // foreach (var aluno in Alunos)
+            // {
+            //     Console.WriteLine($" - {aluno.NomeCompleto}");
+            // }
+
+            for (int count = 0; count < Alunos.Count; count++)
             {
-                Console.WriteLine($" - {aluno.NomeCompleto}");
+                // concatenação de strings
+                string textoConcatenado = "N° -> " + (count + 1) + " - Nome -> " + Alunos[count].NomeCompleto;
+                // interpolação de strings
+                string textoInterpolado = $"N° -> {{{count + 1}}} - Nome -> {Alunos[count].NomeCompleto}";
+                Console.WriteLine("Concatenado = " + textoConcatenado);
+                Console.WriteLine("Interpolado = " + textoInterpolado);
             }
         }
 
