@@ -11,6 +11,8 @@ namespace ExemploExplorando.Models
         // Construtores são métodos especiais que inicializam os objetos
         public Pessoa()
         {
+            Nome = "Nome Padrão";
+            Sobrenome = "Sobrenome Padrão";
 
         }
         public Pessoa(string nome, string sobrenome)

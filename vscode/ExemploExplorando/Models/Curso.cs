@@ -7,8 +7,8 @@ namespace ExemploExplorando.Models
 {
     public class Curso
     {
-        public string Nome { get; set; }
-        public List<Pessoa> Alunos { get; set; } // propriedade Alunos
+        public required string Nome { get; set; }
+        public required List<Pessoa> Alunos { get; set; } // propriedade Alunos
 
         public void AdicionarAluno(Pessoa aluno)
         {
