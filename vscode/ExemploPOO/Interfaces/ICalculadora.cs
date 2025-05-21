@@ -7,7 +7,7 @@ namespace ExemploPOO.Interfaces
 {
     public interface ICalculadora
     {
-        double Somar(double a, double b);
+        decimal Somar(decimal a, decimal b);
         double Subtrair(double a, double b);
         double Multiplicar(double a, double b);
         double Dividir(double a, double b)

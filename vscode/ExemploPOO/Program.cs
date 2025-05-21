@@ -1,6 +1,21 @@
 ﻿using ExemploPOO.Models;
 using ExemploPOO.Interfaces;
 
+decimal valor1 = 10;
+
+List<decimal> computadores = new List<decimal>();
+// se computadores for vazio, não faz nada
+if (computadores.Count == 0)
+{
+    Console.WriteLine("Lista vazia");
+}
+else
+{
+    Console.WriteLine("Lista não vazia");
+}
+computadores.Sum();
+
+
 //vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 // Intefaces
 // Contrato que pode ser implementado por qualquer classe
@@ -9,7 +24,7 @@ using ExemploPOO.Interfaces;
 // ICalculadora calculadora = new ICalculadora(); // Não é possível instanciar uma interface
 ICalculadora calculadora = new Calculadora();
 Console.WriteLine(calculadora.Somar(10, 20));
-Console.WriteLine(calculadora.Dividir(10, 3));
+Console.WriteLine(calculadora.Dividir(10, 3).ToString("F2"));
 
 //vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 // classe object -> classe base de todas as classes

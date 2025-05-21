@@ -22,7 +22,7 @@ namespace ExemploPOO.Models
             return a * b;
         }
 
-        public double Somar(double a, double b)
+        public decimal Somar(decimal a, decimal b)
         {
             return a + b;
         }
