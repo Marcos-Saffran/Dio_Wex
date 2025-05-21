@@ -3,6 +3,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Adicione o serviço do Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -34,9 +35,7 @@ app.UseHttpsRedirection();
 // })
 // .WithName("GetWeatherForecast");
 
+app.MapControllers();
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+
