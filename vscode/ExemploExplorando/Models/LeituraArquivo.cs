@@ -18,7 +18,7 @@ namespace ExemploExplorando.Models
                 }
 
                 var linhas = File.ReadAllLines(caminhoArquivo);
-                return (true, linhas, linhas.Count());
+                return (true, linhas, linhas.Length);
             }
             catch (Exception ex)
             {

@@ -5,6 +5,36 @@ using System.Globalization;
 // Tuplas na prática
 // Tuplas são estruturas de dados que permitem agrupar diferentes tipos de dados em uma única estrutura.
 
+LeituraArquivo leituraArquivo = new LeituraArquivo();
+var resultado = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
+
+if (resultado.Sucesso)
+{
+    Console.WriteLine($"Total de linhas lidas: {resultado.TotalLinhas}");
+    foreach (var linha in resultado.Linhas)
+    {
+        Console.WriteLine(linha);
+    }
+}
+else
+{
+    Console.WriteLine("Não foi possível ler o arquivo.");
+}
+
+var (sucesso, linhas, totalLinhas) = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
+if (sucesso)
+{
+    Console.WriteLine($"Total de linhas lidas: {totalLinhas}");
+    foreach (var linha in linhas)
+    {
+        Console.WriteLine(linha);
+    }
+}
+else
+{
+    Console.WriteLine("Não foi possível ler o arquivo.");
+}
+
 // (int id, string Nome, string Sobrenome, decimal Salario) tupla = (1, "João", "Silva", 105m);
 // Console.WriteLine($"ID: {tupla.id}, Nome: {tupla.Nome}, Sobrenome: {tupla.Sobrenome}, Salário: {tupla.Salario.ToString("C", CultureInfo.CurrentCulture)}");
 
