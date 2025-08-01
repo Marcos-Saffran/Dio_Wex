@@ -1,14 +1,29 @@
 ﻿using ExemploExplorando.Models;
 using System.Globalization;
 
+// \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+// IF ternário
+
+int numero = 15;
+string resultado = numero % 2 == 0 ? $"O número {numero} é par" : $"O número {numero} é ímpar";
+Console.WriteLine(resultado);
+
+// /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+
+
+
+
+
 // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 // Tuplas na prática
 // Tuplas são estruturas de dados que permitem agrupar diferentes tipos de dados em uma única estrutura.
 
-Pessoa pessoa = new Pessoa("João", "Silva");
+// Pessoa pessoa = new Pessoa("João", "Silva");
 
-(string nome, string sobrenome) = pessoa; // Desconstrução de tupla
-Console.WriteLine($"Nome: {nome}, Sobrenome: {sobrenome}");
+// (string nome, string sobrenome) = pessoa; // Desconstrução de tupla
+// Console.WriteLine($"Nome: {nome}, Sobrenome: {sobrenome}");
 
 // LeituraArquivo leituraArquivo = new LeituraArquivo();
 // var resultado = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
@@ -152,6 +167,8 @@ Console.WriteLine($"Nome: {nome}, Sobrenome: {sobrenome}");
 
 
 
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 
