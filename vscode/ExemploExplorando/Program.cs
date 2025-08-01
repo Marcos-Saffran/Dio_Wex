@@ -36,10 +36,28 @@ else
 }
 
 // usando descarte de informações para total de linhas
+Console.WriteLine("usando descarte de informações para total de linhas");
 var (sucessoDescarte, linhasDescarte, _) = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
 if (sucessoDescarte)
 {
     foreach (var linha in linhasDescarte)
+    {
+        Console.WriteLine(linha);
+    }
+}
+else
+{
+    Console.WriteLine("Não foi possível ler o arquivo.");
+}
+
+// usando desconstrução de tuplas
+Console.WriteLine("usando desconstrução de tuplas");
+var resultadoDesconstrucao = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
+var (sucessoDesconstrucao, linhasDesconstrucao, totalLinhasDesconstrucao) = resultadoDesconstrucao;
+if (sucessoDesconstrucao)
+{
+    Console.WriteLine($"Total de linhas lidas: {totalLinhasDesconstrucao}");
+    foreach (var linha in linhasDesconstrucao)
     {
         Console.WriteLine(linha);
     }
