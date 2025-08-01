@@ -1,18 +1,44 @@
 ﻿using ExemploExplorando.Models;
 using System.Globalization;
 
+// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+// Tuplas na prática
+// Tuplas são estruturas de dados que permitem agrupar diferentes tipos de dados em uma única estrutura.
+
+// (int id, string Nome, string Sobrenome, decimal Salario) tupla = (1, "João", "Silva", 105m);
+// Console.WriteLine($"ID: {tupla.id}, Nome: {tupla.Nome}, Sobrenome: {tupla.Sobrenome}, Salário: {tupla.Salario.ToString("C", CultureInfo.CurrentCulture)}");
+
+// // Outra sintaxe de tuplas
+// ValueTuple<int, string, string, decimal> tupla1 = (1, "Ana", "Souza", 2000.75m);
+// Console.WriteLine($"ID: {tupla1.Item1}, Nome: {tupla1.Item2}, Sobrenome: {tupla1.Item3}, Salário: {tupla1.Item4.ToString("C", CultureInfo.CurrentCulture)}");
+
+// var outroExemploTuplaCreate = Tuple.Create(3, "Carlos", "Pereira", 3000.00m);
+// Console.WriteLine($"ID: {outroExemploTuplaCreate.Item1}, Nome: {outroExemploTuplaCreate.Item2}, Sobrenome: {outroExemploTuplaCreate.Item3}, Salário: {outroExemploTuplaCreate.Item4.ToString("C", CultureInfo.CurrentCulture)}");
+
+// var tupla2 = (Id: 2, Nome: "Maria", Sobrenome: "Oliveira", Salario: 1500.50m);
+// Console.WriteLine($"ID: {tupla2.Id}, Nome: {tupla2.Nome}, Sobrenome: {tupla2.Sobrenome}, Salário: {tupla2.Salario.ToString("C", CultureInfo.CurrentCulture)}");
+
+// tuplas em métodos
+// (int, string) ObterDadosPessoa()
+// {
+//     return (1, "João");
+// }
+
+
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 // Exceções e Coleções com C#
 
 // Dictionary - Dicionário - chave-valor
-Dictionary<string, string> estados = new Dictionary<string, string>();
-estados.Add("SP", "São Paulo");
-estados.Add("RJ", "Rio de Janeiro");
-estados.Add("MG", "Minas Gerais");
-estados.Add("BA", "Bahia");
-estados.Add("PR", "Paraná");
-estados.Add("mg", "minas gerais");
+// Dictionary<string, string> estados = new Dictionary<string, string>();
+// estados.Add("SP", "São Paulo");
+// estados.Add("RJ", "Rio de Janeiro");
+// estados.Add("MG", "Minas Gerais");
+// estados.Add("BA", "Bahia");
+// estados.Add("PR", "Paraná");
+// estados.Add("mg", "minas gerais");
 // estados.Add("RS", "Rio Grande do Sul");
 // estados.Add("ES", "Espírito Santo");
 // estados.Add("GO", "Goiás");
@@ -29,14 +55,14 @@ estados.Add("mg", "minas gerais");
 // estados.Add("AL", "Alagoas");
 // estados.Add("SE", "Sergipe");
 
-Console.WriteLine(estados["mg".ToUpper()]); // Acessando o valor do estado de Minas Gerais
+// Console.WriteLine(estados["mg".ToUpper()]); // Acessando o valor do estado de Minas Gerais
 
-foreach (var estado in estados)
-{
-    Console.WriteLine($"Chave: {estado.Key} - Valor: {estado.Value}");
-}
+// foreach (var estado in estados)
+// {
+//     Console.WriteLine($"Chave: {estado.Key} - Valor: {estado.Value}");
+// }
 
-Console.WriteLine("========================================");
+// Console.WriteLine("========================================");
 
 // estados.Remove("BA"); // Remove o estado da Bahia
 // estados["SP"] = "São Paulo - SP"; // Atualiza o valor do estado de São Paulo

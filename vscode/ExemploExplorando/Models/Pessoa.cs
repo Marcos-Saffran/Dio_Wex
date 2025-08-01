@@ -21,7 +21,7 @@ namespace ExemploExplorando.Models
             Sobrenome = sobrenome;
         }
 
-        private string _nome;
+        private string _nome = "";
 
         public string Nome
         {
