@@ -5,67 +5,72 @@ using System.Globalization;
 // Tuplas na prática
 // Tuplas são estruturas de dados que permitem agrupar diferentes tipos de dados em uma única estrutura.
 
-LeituraArquivo leituraArquivo = new LeituraArquivo();
-var resultado = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
+Pessoa pessoa = new Pessoa("João", "Silva");
 
-if (resultado.Sucesso)
-{
-    Console.WriteLine($"Total de linhas lidas: {resultado.TotalLinhas}");
-    foreach (var linha in resultado.Linhas)
-    {
-        Console.WriteLine(linha);
-    }
-}
-else
-{
-    Console.WriteLine("Não foi possível ler o arquivo.");
-}
+(string nome, string sobrenome) = pessoa; // Desconstrução de tupla
+Console.WriteLine($"Nome: {nome}, Sobrenome: {sobrenome}");
 
-var (sucesso, linhas, totalLinhas) = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
-if (sucesso)
-{
-    Console.WriteLine($"Total de linhas lidas: {totalLinhas}");
-    foreach (var linha in linhas)
-    {
-        Console.WriteLine(linha);
-    }
-}
-else
-{
-    Console.WriteLine("Não foi possível ler o arquivo.");
-}
+// LeituraArquivo leituraArquivo = new LeituraArquivo();
+// var resultado = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
 
-// usando descarte de informações para total de linhas
-Console.WriteLine("usando descarte de informações para total de linhas");
-var (sucessoDescarte, linhasDescarte, _) = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
-if (sucessoDescarte)
-{
-    foreach (var linha in linhasDescarte)
-    {
-        Console.WriteLine(linha);
-    }
-}
-else
-{
-    Console.WriteLine("Não foi possível ler o arquivo.");
-}
+// if (resultado.Sucesso)
+// {
+//     Console.WriteLine($"Total de linhas lidas: {resultado.TotalLinhas}");
+//     foreach (var linha in resultado.Linhas)
+//     {
+//         Console.WriteLine(linha);
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("Não foi possível ler o arquivo.");
+// }
 
-// usando desconstrução de tuplas
-Console.WriteLine("usando desconstrução de tuplas");
-var resultadoDesconstrucao = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
-var (sucessoDesconstrucao, linhasDesconstrucao, totalLinhasDesconstrucao) = resultadoDesconstrucao;
-if (sucessoDesconstrucao)
-{
-    Console.WriteLine($"Total de linhas lidas: {totalLinhasDesconstrucao}");
-    foreach (var linha in linhasDesconstrucao)
-    {
-        Console.WriteLine(linha);
-    }
-}
-else
-{
-    Console.WriteLine("Não foi possível ler o arquivo.");
-}
+// var (sucesso, linhas, totalLinhas) = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
+// if (sucesso)
+// {
+//     Console.WriteLine($"Total de linhas lidas: {totalLinhas}");
+//     foreach (var linha in linhas)
+//     {
+//         Console.WriteLine(linha);
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("Não foi possível ler o arquivo.");
+// }
+
+// // usando descarte de informações para total de linhas
+// Console.WriteLine("usando descarte de informações para total de linhas");
+// var (sucessoDescarte, linhasDescarte, _) = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
+// if (sucessoDescarte)
+// {
+//     foreach (var linha in linhasDescarte)
+//     {
+//         Console.WriteLine(linha);
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("Não foi possível ler o arquivo.");
+// }
+
+// // usando desconstrução de tuplas
+// Console.WriteLine("usando desconstrução de tuplas");
+// var resultadoDesconstrucao = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
+// var (sucessoDesconstrucao, linhasDesconstrucao, totalLinhasDesconstrucao) = resultadoDesconstrucao;
+// if (sucessoDesconstrucao)
+// {
+//     Console.WriteLine($"Total de linhas lidas: {totalLinhasDesconstrucao}");
+//     foreach (var linha in linhasDesconstrucao)
+//     {
+//         Console.WriteLine(linha);
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("Não foi possível ler o arquivo.");
+// }
 
 // (int id, string Nome, string Sobrenome, decimal Salario) tupla = (1, "João", "Silva", 105m);
 // Console.WriteLine($"ID: {tupla.id}, Nome: {tupla.Nome}, Sobrenome: {tupla.Sobrenome}, Salário: {tupla.Salario.ToString("C", CultureInfo.CurrentCulture)}");
