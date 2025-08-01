@@ -35,6 +35,20 @@ else
     Console.WriteLine("Não foi possível ler o arquivo.");
 }
 
+// usando descarte de informações para total de linhas
+var (sucessoDescarte, linhasDescarte, _) = leituraArquivo.LerArquivo("Arquivos/arquivoLeitura.txt");
+if (sucessoDescarte)
+{
+    foreach (var linha in linhasDescarte)
+    {
+        Console.WriteLine(linha);
+    }
+}
+else
+{
+    Console.WriteLine("Não foi possível ler o arquivo.");
+}
+
 // (int id, string Nome, string Sobrenome, decimal Salario) tupla = (1, "João", "Silva", 105m);
 // Console.WriteLine($"ID: {tupla.id}, Nome: {tupla.Nome}, Sobrenome: {tupla.Sobrenome}, Salário: {tupla.Salario.ToString("C", CultureInfo.CurrentCulture)}");
 
