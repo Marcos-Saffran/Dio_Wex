@@ -9,6 +9,10 @@ int numero = 15;
 string resultado = numero % 2 == 0 ? $"O número {numero} é par" : $"O número {numero} é ímpar";
 Console.WriteLine(resultado);
 
+bool isEven = numero % 2 == 0; // Usando o operador ternário para verificar se o número é par ou ímpar
+// Outra forma de usar o operador ternário
+Console.WriteLine($"O número {numero} é " + (isEven ? "par" : "ímpar"));
+
 // /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 
