@@ -2,12 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace ExemploExplorando.Models
 {
     public class Venda
     {
         public int Id { get; set; }
+
+        [JsonProperty("Produto")]
         public string? Produto { get; set; }
         public decimal Preco { get; set; }
 
@@ -24,7 +27,7 @@ namespace ExemploExplorando.Models
         // tostring para exibir informações da venda
         public override string ToString()
         {
-            return $"Venda ID: {Id}, Produto: {Produto}, Preço: {Preco:C}, Data da Venda: {DataVenda:dd/MM/yyyy}";
+            return $"Venda ID: {Id}, Produto: {Produto}, Preço: {Preco:C}, Data da Venda: {DataVenda:dd/MM/yyyy HH:mm:ss}";
         }
 
     }

@@ -8,42 +8,58 @@ using System.Globalization;
 // Serialização é o processo de converter um objeto em uma representação que pode ser armazenada ou transmitida.
 // Deserialização é o processo inverso, onde a representação é convertida de volta em um objeto.
 
-DateTime dataAtual = DateTime.Now;
 
-// ISO 8601 é um padrão internacional para representação de data e hora.
-Console.WriteLine($"Data atual no formato ISO 8601: {dataAtual.ToString("yyyy-MM-ddTHH:mm:ss.fffZ", CultureInfo.InvariantCulture)}");
+// Deserializando um objeto
+string json = "{\"Id\":1,\"Produto\":\"Produto A\",\"Preco\":99.99,\"DataVenda\":\"2023-10-01T00:00:00\"}";
 
-Venda venda1 = new Venda(1, "Produto A", 99.99m, dataAtual);
-Venda venda2 = new Venda(2, "Produto B", 49.99m, dataAtual);
+Venda vendaDeserializada = JsonConvert.DeserializeObject<Venda>(json);
+Console.WriteLine($"Venda Deserializada: {vendaDeserializada}");
 
-string serializado = JsonConvert.SerializeObject(venda1);
-Console.WriteLine($"Objeto serializado: {serializado}");
+string conteudoArquivo = await File.ReadAllTextAsync("Arquivos/listaVendas.json");
 
-string serializadoComFormatacao = JsonConvert.SerializeObject(venda1, Formatting.Indented);
-Console.WriteLine($"Objeto serializado com formatação:\n{serializadoComFormatacao}");
+List<Venda> listaVendasDeserializada = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
+Console.WriteLine("Lista de Vendas Deserializada:");
+foreach (var venda in listaVendasDeserializada)
+{
+    Console.WriteLine($"- {venda}");
+}
 
-// escrevendo um arquivo json
-await File.WriteAllTextAsync("Arquivos/vendaFormatada.json", serializadoComFormatacao);
-await File.WriteAllTextAsync("Arquivos/vendaNaoFormatada.json", serializado);
+// DateTime dataAtual = DateTime.Now;
 
-// File.WriteAllText("Arquivos/vendas.json", serializadoComFormatacao);
+// // ISO 8601 é um padrão internacional para representação de data e hora.
+// Console.WriteLine($"Data atual no formato ISO 8601: {dataAtual.ToString("yyyy-MM-ddTHH:mm:ss.fffZ", CultureInfo.InvariantCulture)}");
 
-// serializando uma lista de vendas
-List<Venda> listaVendas = new List<Venda>();
+// Venda venda1 = new Venda(1, "Produto A", 99.99m, dataAtual);
+// Venda venda2 = new Venda(2, "Produto B", 49.99m, dataAtual);
 
-listaVendas.Add(venda1);
-listaVendas.Add(venda2);
+// string serializado = JsonConvert.SerializeObject(venda1);
+// Console.WriteLine($"Objeto serializado: {serializado}");
 
-string listaSerializada = JsonConvert.SerializeObject(listaVendas, Formatting.Indented);
-Console.WriteLine($"Lista de vendas serializada:\n{listaSerializada}");
+// string serializadoComFormatacao = JsonConvert.SerializeObject(venda1, Formatting.Indented);
+// Console.WriteLine($"Objeto serializado com formatação:\n{serializadoComFormatacao}");
 
-// escrevendo uma lista de vendas em um arquivo json
-await File.WriteAllTextAsync("Arquivos/listaVendas.json", listaSerializada);
+// // escrevendo um arquivo json
+// await File.WriteAllTextAsync("Arquivos/vendaFormatada.json", serializadoComFormatacao);
+// await File.WriteAllTextAsync("Arquivos/vendaNaoFormatada.json", serializado);
 
-string listaSerializadaNaoFormatada = JsonConvert.SerializeObject(listaVendas);
-Console.WriteLine($"Lista de vendas serializada sem formatação:\n{listaSerializadaNaoFormatada}");
-// escrevendo uma lista de vendas em um arquivo json sem formatação
-await File.WriteAllTextAsync("Arquivos/listaVendasNaoFormatada.json", listaSerializadaNaoFormatada);
+// // File.WriteAllText("Arquivos/vendas.json", serializadoComFormatacao);
+
+// // serializando uma lista de vendas
+// List<Venda> listaVendas = new List<Venda>();
+
+// listaVendas.Add(venda1);
+// listaVendas.Add(venda2);
+
+// string listaSerializada = JsonConvert.SerializeObject(listaVendas, Formatting.Indented);
+// Console.WriteLine($"Lista de vendas serializada:\n{listaSerializada}");
+
+// // escrevendo uma lista de vendas em um arquivo json
+// await File.WriteAllTextAsync("Arquivos/listaVendas.json", listaSerializada);
+
+// string listaSerializadaNaoFormatada = JsonConvert.SerializeObject(listaVendas);
+// Console.WriteLine($"Lista de vendas serializada sem formatação:\n{listaSerializadaNaoFormatada}");
+// // escrevendo uma lista de vendas em um arquivo json sem formatação
+// await File.WriteAllTextAsync("Arquivos/listaVendasNaoFormatada.json", listaSerializadaNaoFormatada);
 
 
 
