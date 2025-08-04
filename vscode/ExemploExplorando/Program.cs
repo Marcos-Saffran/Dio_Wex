@@ -1,17 +1,70 @@
 ﻿using ExemploExplorando.Models;
+using Newtonsoft.Json;
 using System.Globalization;
+
+
+// \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+// Serialização na prática
+// Serialização é o processo de converter um objeto em uma representação que pode ser armazenada ou transmitida.
+// Deserialização é o processo inverso, onde a representação é convertida de volta em um objeto.
+
+DateTime dataAtual = DateTime.Now;
+
+// ISO 8601 é um padrão internacional para representação de data e hora.
+Console.WriteLine($"Data atual no formato ISO 8601: {dataAtual.ToString("yyyy-MM-ddTHH:mm:ss.fffZ", CultureInfo.InvariantCulture)}");
+
+Venda venda1 = new Venda(1, "Produto A", 99.99m, dataAtual);
+Venda venda2 = new Venda(2, "Produto B", 49.99m, dataAtual);
+
+string serializado = JsonConvert.SerializeObject(venda1);
+Console.WriteLine($"Objeto serializado: {serializado}");
+
+string serializadoComFormatacao = JsonConvert.SerializeObject(venda1, Formatting.Indented);
+Console.WriteLine($"Objeto serializado com formatação:\n{serializadoComFormatacao}");
+
+// escrevendo um arquivo json
+await File.WriteAllTextAsync("Arquivos/vendaFormatada.json", serializadoComFormatacao);
+await File.WriteAllTextAsync("Arquivos/vendaNaoFormatada.json", serializado);
+
+// File.WriteAllText("Arquivos/vendas.json", serializadoComFormatacao);
+
+// serializando uma lista de vendas
+List<Venda> listaVendas = new List<Venda>();
+
+listaVendas.Add(venda1);
+listaVendas.Add(venda2);
+
+string listaSerializada = JsonConvert.SerializeObject(listaVendas, Formatting.Indented);
+Console.WriteLine($"Lista de vendas serializada:\n{listaSerializada}");
+
+// escrevendo uma lista de vendas em um arquivo json
+await File.WriteAllTextAsync("Arquivos/listaVendas.json", listaSerializada);
+
+string listaSerializadaNaoFormatada = JsonConvert.SerializeObject(listaVendas);
+Console.WriteLine($"Lista de vendas serializada sem formatação:\n{listaSerializadaNaoFormatada}");
+// escrevendo uma lista de vendas em um arquivo json sem formatação
+await File.WriteAllTextAsync("Arquivos/listaVendasNaoFormatada.json", listaSerializadaNaoFormatada);
+
+
+
+
+
+
+
+// /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
 
 // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
 // IF ternário
 
-int numero = 15;
-string resultado = numero % 2 == 0 ? $"O número {numero} é par" : $"O número {numero} é ímpar";
-Console.WriteLine(resultado);
+// int numero = 15;
+// string resultado = numero % 2 == 0 ? $"O número {numero} é par" : $"O número {numero} é ímpar";
+// Console.WriteLine(resultado);
 
-bool isEven = numero % 2 == 0; // Usando o operador ternário para verificar se o número é par ou ímpar
-// Outra forma de usar o operador ternário
-Console.WriteLine($"O número {numero} é " + (isEven ? "par" : "ímpar"));
+// bool isEven = numero % 2 == 0; // Usando o operador ternário para verificar se o número é par ou ímpar
+// // Outra forma de usar o operador ternário
+// Console.WriteLine($"O número {numero} é " + (isEven ? "par" : "ímpar"));
 
 // /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
