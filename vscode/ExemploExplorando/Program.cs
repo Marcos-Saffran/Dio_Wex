@@ -4,17 +4,29 @@ using System.Globalization;
 
 
 // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+// Classes genéricas
+// Classes genéricas são usadas para criar classes que podem trabalhar com diferentes tipos de dados.
+
+MeuArray<int> arrayInteiro = new MeuArray<int>();
+arrayInteiro.AdicionarElementoArray(1);
+Console.WriteLine(arrayInteiro[0]); // Saída: 1
+
+MeuArray<string> arrayString = new MeuArray<string>();
+arrayString.AdicionarElementoArray("Olá");
+Console.WriteLine(arrayString[0]); // Saída: Olá
+
 // Tipos dinâmicos
 // Tipos dinâmicos são usados para criar objetos que podem ter propriedades e métodos definidos em tempo de execução.
 // Eles são úteis quando você precisa de flexibilidade para trabalhar com objetos que podem ter diferentes estruturas.
 // O tipo dinâmico é representado pela palavra-chave "dynamic".
 
-dynamic variavelDinamica = 4;
+// dynamic variavelDinamica = 4;
 
-Console.WriteLine($"O tipo da variável é: {variavelDinamica.GetType()}, valor: {variavelDinamica}");
+// Console.WriteLine($"O tipo da variável é: {variavelDinamica.GetType()}, valor: {variavelDinamica}");
 
-variavelDinamica = "Texto dinâmico";
-Console.WriteLine($"O tipo da variável é: {variavelDinamica.GetType()}, valor: {variavelDinamica}");
+// variavelDinamica = "Texto dinâmico";
+// Console.WriteLine($"O tipo da variável é: {variavelDinamica.GetType()}, valor: {variavelDinamica}");
 
 // // tipos anônimos
 // // Tipos anônimos são usados para criar objetos sem a necessidade de definir uma classe.
