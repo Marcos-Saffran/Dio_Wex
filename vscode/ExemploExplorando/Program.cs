@@ -4,24 +4,36 @@ using System.Globalization;
 
 
 // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-// tipos anônimos
-// Tipos anônimos são usados para criar objetos sem a necessidade de definir uma classe.
-// Eles são úteis quando você precisa de um objeto temporário para armazenar dados sem a necessidade de criar uma classe específica.
-// não é possível criar tipos anônimos com herança, interfaces ou construtores personalizados.
-// não é possível criar tipos anônimos com métodos, apenas propriedades.
-var pessoaAnonima = new { Nome = "João", Sobrenome = "Silva" };
+// Tipos dinâmicos
+// Tipos dinâmicos são usados para criar objetos que podem ter propriedades e métodos definidos em tempo de execução.
+// Eles são úteis quando você precisa de flexibilidade para trabalhar com objetos que podem ter diferentes estruturas.
+// O tipo dinâmico é representado pela palavra-chave "dynamic".
 
-// Tipos anônimos em coleção
+dynamic variavelDinamica = 4;
 
-string conteudoArquivo = File.ReadAllText("Arquivos/listaVendas.json");
-List<Venda> listaVendas = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
+Console.WriteLine($"O tipo da variável é: {variavelDinamica.GetType()}, valor: {variavelDinamica}");
 
-var listaAnonimos = listaVendas.Select(x => new { x.Produto, x.Preco });
+variavelDinamica = "Texto dinâmico";
+Console.WriteLine($"O tipo da variável é: {variavelDinamica.GetType()}, valor: {variavelDinamica}");
 
-foreach (var item in listaAnonimos)
-{
-    Console.WriteLine($"Produto: {item.Produto}, Preço: {item.Preco.ToString("C", CultureInfo.CurrentCulture)}");
-}
+// // tipos anônimos
+// // Tipos anônimos são usados para criar objetos sem a necessidade de definir uma classe.
+// // Eles são úteis quando você precisa de um objeto temporário para armazenar dados sem a necessidade de criar uma classe específica.
+// // não é possível criar tipos anônimos com herança, interfaces ou construtores personalizados.
+// // não é possível criar tipos anônimos com métodos, apenas propriedades.
+// var pessoaAnonima = new { Nome = "João", Sobrenome = "Silva" };
+
+// // Tipos anônimos em coleção
+
+// string conteudoArquivo = File.ReadAllText("Arquivos/listaVendas.json");
+// List<Venda> listaVendas = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
+
+// var listaAnonimos = listaVendas.Select(x => new { x.Produto, x.Preco });
+
+// foreach (var item in listaAnonimos)
+// {
+//     Console.WriteLine($"Produto: {item.Produto}, Preço: {item.Preco.ToString("C", CultureInfo.CurrentCulture)}");
+// }
 
 
 
