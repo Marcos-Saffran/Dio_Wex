@@ -4,29 +4,50 @@ using System.Globalization;
 
 
 // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-// tipos nulos
-bool? desejaReceberEmail = null; // Nullable boolean
-if (desejaReceberEmail == true)
+// tipos anônimos
+// Tipos anônimos são usados para criar objetos sem a necessidade de definir uma classe.
+// Eles são úteis quando você precisa de um objeto temporário para armazenar dados sem a necessidade de criar uma classe específica.
+// não é possível criar tipos anônimos com herança, interfaces ou construtores personalizados.
+// não é possível criar tipos anônimos com métodos, apenas propriedades.
+var pessoaAnonima = new { Nome = "João", Sobrenome = "Silva" };
+
+// Tipos anônimos em coleção
+
+string conteudoArquivo = File.ReadAllText("Arquivos/listaVendas.json");
+List<Venda> listaVendas = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
+
+var listaAnonimos = listaVendas.Select(x => new { x.Produto, x.Preco });
+
+foreach (var item in listaAnonimos)
 {
-    Console.WriteLine("O usuário deseja receber e-mails.");
-}
-else if (desejaReceberEmail == false)
-{
-    Console.WriteLine("O usuário não deseja receber e-mails.");
-}
-else
-{
-    Console.WriteLine("O usuário não informou se deseja receber e-mails.");
+    Console.WriteLine($"Produto: {item.Produto}, Preço: {item.Preco.ToString("C", CultureInfo.CurrentCulture)}");
 }
 
-if (desejaReceberEmail.HasValue && desejaReceberEmail.Value) // ou (desejaReceberEmail != null && desejaReceberEmail.Value)
-{
-    Console.WriteLine("O usuário deseja receber e-mails.");
-}
-else
-{
-    Console.WriteLine("O usuário não informou ou não deseja receber e-mails.");
-}
+
+
+// // tipos nulos
+// bool? desejaReceberEmail = null; // Nullable boolean
+// if (desejaReceberEmail == true)
+// {
+//     Console.WriteLine("O usuário deseja receber e-mails.");
+// }
+// else if (desejaReceberEmail == false)
+// {
+//     Console.WriteLine("O usuário não deseja receber e-mails.");
+// }
+// else
+// {
+//     Console.WriteLine("O usuário não informou se deseja receber e-mails.");
+// }
+
+// if (desejaReceberEmail.HasValue && desejaReceberEmail.Value) // ou (desejaReceberEmail != null && desejaReceberEmail.Value)
+// {
+//     Console.WriteLine("O usuário deseja receber e-mails.");
+// }
+// else
+// {
+//     Console.WriteLine("O usuário não informou ou não deseja receber e-mails.");
+// }
 
 
 
