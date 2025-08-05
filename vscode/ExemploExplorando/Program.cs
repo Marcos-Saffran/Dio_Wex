@@ -4,64 +4,29 @@ using System.Globalization;
 
 
 // \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-// Serialização na prática
-// Serialização é o processo de converter um objeto em uma representação que pode ser armazenada ou transmitida.
-// Deserialização é o processo inverso, onde a representação é convertida de volta em um objeto.
-
-
-// Deserializando um objeto
-string json = "{\"Id\":1,\"Produto\":\"Produto A\",\"Preco\":99.99,\"DataVenda\":\"2023-10-01T00:00:00\"}";
-
-Venda vendaDeserializada = JsonConvert.DeserializeObject<Venda>(json);
-Console.WriteLine($"Venda Deserializada: {vendaDeserializada}");
-
-string conteudoArquivo = await File.ReadAllTextAsync("Arquivos/listaVendas.json");
-
-List<Venda> listaVendasDeserializada = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
-Console.WriteLine("Lista de Vendas Deserializada:");
-foreach (var venda in listaVendasDeserializada)
+// tipos nulos
+bool? desejaReceberEmail = null; // Nullable boolean
+if (desejaReceberEmail == true)
 {
-    Console.WriteLine($"- {venda}");
+    Console.WriteLine("O usuário deseja receber e-mails.");
+}
+else if (desejaReceberEmail == false)
+{
+    Console.WriteLine("O usuário não deseja receber e-mails.");
+}
+else
+{
+    Console.WriteLine("O usuário não informou se deseja receber e-mails.");
 }
 
-// DateTime dataAtual = DateTime.Now;
-
-// // ISO 8601 é um padrão internacional para representação de data e hora.
-// Console.WriteLine($"Data atual no formato ISO 8601: {dataAtual.ToString("yyyy-MM-ddTHH:mm:ss.fffZ", CultureInfo.InvariantCulture)}");
-
-// Venda venda1 = new Venda(1, "Produto A", 99.99m, dataAtual);
-// Venda venda2 = new Venda(2, "Produto B", 49.99m, dataAtual);
-
-// string serializado = JsonConvert.SerializeObject(venda1);
-// Console.WriteLine($"Objeto serializado: {serializado}");
-
-// string serializadoComFormatacao = JsonConvert.SerializeObject(venda1, Formatting.Indented);
-// Console.WriteLine($"Objeto serializado com formatação:\n{serializadoComFormatacao}");
-
-// // escrevendo um arquivo json
-// await File.WriteAllTextAsync("Arquivos/vendaFormatada.json", serializadoComFormatacao);
-// await File.WriteAllTextAsync("Arquivos/vendaNaoFormatada.json", serializado);
-
-// // File.WriteAllText("Arquivos/vendas.json", serializadoComFormatacao);
-
-// // serializando uma lista de vendas
-// List<Venda> listaVendas = new List<Venda>();
-
-// listaVendas.Add(venda1);
-// listaVendas.Add(venda2);
-
-// string listaSerializada = JsonConvert.SerializeObject(listaVendas, Formatting.Indented);
-// Console.WriteLine($"Lista de vendas serializada:\n{listaSerializada}");
-
-// // escrevendo uma lista de vendas em um arquivo json
-// await File.WriteAllTextAsync("Arquivos/listaVendas.json", listaSerializada);
-
-// string listaSerializadaNaoFormatada = JsonConvert.SerializeObject(listaVendas);
-// Console.WriteLine($"Lista de vendas serializada sem formatação:\n{listaSerializadaNaoFormatada}");
-// // escrevendo uma lista de vendas em um arquivo json sem formatação
-// await File.WriteAllTextAsync("Arquivos/listaVendasNaoFormatada.json", listaSerializadaNaoFormatada);
-
-
+if (desejaReceberEmail.HasValue && desejaReceberEmail.Value) // ou (desejaReceberEmail != null && desejaReceberEmail.Value)
+{
+    Console.WriteLine("O usuário deseja receber e-mails.");
+}
+else
+{
+    Console.WriteLine("O usuário não informou ou não deseja receber e-mails.");
+}
 
 
 
